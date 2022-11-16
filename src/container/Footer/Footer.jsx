@@ -37,17 +37,21 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className='head-tex'>Take a coffee & chat with me</h2>
+      <h2 className='head-tex'>Chat with me☕</h2>
 
       <div className='app__footer-cards'>
-        <div className='app__footer-card'>
-          <img src={images.email} alt='email' />
-          <a href="mailto:emailidgoeshere@gmail.com" className='p-text' >someemailid@email.com</a>
-        </div>
-        <div className='app__footer-card'>
-          <img src={images.mobile} alt='mobile' />
-          <a href="tel: +91 123467890" className='p-text' >+91 123467890</a>
-        </div>
+        <a href="https://www.instagram.com/_shswt" target="_blank">
+          <div className='app__footer-card'>
+            <img src={images.instagram} alt='instagram' />
+            <p className='p-text' >@_shswt</p>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/shswt" target="_blank">
+          <div className='app__footer-card'>
+            <img src={images.linkedin} alt='mobile' />
+            <p className='p-text' >Shashwat Shukla</p>
+          </div>
+        </a>
       </div>
 
       {!isFormSubmitted ?

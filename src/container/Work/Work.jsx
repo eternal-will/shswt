@@ -16,21 +16,24 @@ const Work = () => {
 
   useEffect(() => {
     const query = '*[_type == "works"]'
+    const tags = ['All']
 
     client.fetch(query)
       .then(data => {
         setWorks(data)
         setFilterWork(data)
+        data.map(work => {
+          work.tags.map(tag => {
+            if (!tags.includes(tag)) {
+              tags.push(tag)
+            }
+            return 0;
+          })
+          return 0;
+        })
       })
-    
-    const tags = ['All']
-    works.map(work => {
-      work.tags.map(tag => {
-        !tags.includes(tag) && tags.push(tag)
-      })
-    })
+
     setAllTags(tags)
-    console.log(tags)
   }, [])
 
   const handleWorkFilter = item => {
@@ -80,7 +83,7 @@ const Work = () => {
               >
                 {
                   work.projectLink && // render only if projectLink is given
-                  <a href={work.projectLink} target='_blank' rel='noreferrer'>
+                  <a href={work.projectLink} target='_blank' rel="noopener noreferrer">
                     <motion.div
                       whileInView={{ scale: [0, 1] }}
                       whileHover={{ scale: [1, 0.9] }}
@@ -91,7 +94,7 @@ const Work = () => {
                     </motion.div>
                   </a>
                 }
-                <a href={work.codeLink} target='_blank' rel='noreferrer'>
+                <a href={work.codeLink} target='_blank' rel="noopener noreferrer">
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
                     whileHover={{ scale: [1, 0.9] }}

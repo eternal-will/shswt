@@ -1,5 +1,3 @@
-import email from '../assets/email.png';
-import mobile from '../assets/mobile.png';
 import api from '../assets/api.png';
 import cpp from '../assets/cpp.png';
 import css from '../assets/css.png';
@@ -18,6 +16,9 @@ import sass from '../assets/sass.png';
 import typescript from '../assets/typescript.png';
 import vue from '../assets/vue.png';
 
+import instagram from '../assets/instagram.png';
+import linkedin from '../assets/linkedin.png';
+
 import profile from '../assets/profile.png';
 import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
@@ -31,8 +32,8 @@ import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
 
 const images = {
-  email,
-  mobile,
+  instagram,
+  linkedin,
   api,
   cpp,
   css,

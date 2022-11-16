@@ -11,8 +11,7 @@ const Work = () => {
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 })
   const [works, setWorks] = useState([])
   const [filterWork, setFilterWork] = useState([])
-
-  const allTags = ['catto', 'suku', 'gojo','ok', 'All']
+  const [allTags, setAllTags] = useState([])
 
 
   useEffect(() => {
@@ -23,6 +22,15 @@ const Work = () => {
         setWorks(data)
         setFilterWork(data)
       })
+    
+    const tags = ['All']
+    works.map(work => {
+      work.tags.map(tag => {
+        !tags.includes(tag) && tags.push(tag)
+      })
+    })
+    setAllTags(tags)
+    console.log(tags)
   }, [])
 
   const handleWorkFilter = item => {
@@ -44,7 +52,7 @@ const Work = () => {
       <h2 className="head-text">Creative<span> Portfolio </span>Section</h2>
     
       <div className='app__work-filter'>
-        {allTags.map((item, index) => (
+        {allTags?.map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -70,16 +78,19 @@ const Work = () => {
                 transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
                 className='app__work-hover app__flex'
               >
-                <a href={work.projectLink} target='_blank' rel='noreferrer'>
-                  <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{ duration: 0.25}}
-                    className='app__flex'
-                  >
-                    <AiFillEye />
-                  </motion.div>
-                </a>
+                {
+                  work.projectLink && // render only if projectLink is given
+                  <a href={work.projectLink} target='_blank' rel='noreferrer'>
+                    <motion.div
+                      whileInView={{ scale: [0, 1] }}
+                      whileHover={{ scale: [1, 0.9] }}
+                      transition={{ duration: 0.25}}
+                      className='app__flex'
+                    >
+                      <AiFillEye />
+                    </motion.div>
+                  </a>
+                }
                 <a href={work.codeLink} target='_blank' rel='noreferrer'>
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
@@ -113,5 +124,5 @@ const Work = () => {
 export default AppWrap(
   MotionWrap(Work, 'app__works'),
   'work',
-  'app__primarybg'
+  'app__whitebg'
 )

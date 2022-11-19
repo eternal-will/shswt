@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 import { images } from '../../constants'
 import { AppWrap, MotionWrap } from '../../wrapper'
@@ -30,23 +31,31 @@ const Footer = () => {
 
     client.create(contact)
       .then(() => {
-        setLoading(false)
         setIsFormSubmitted(true)
       })
+    
+    emailjs.send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      formData,
+      process.env.REACT_APP_EMAILJS_PUBKEY
+    )
+
+    setLoading(false)
   }
 
   return (
     <>
-      <h2 className='head-tex'>Chat with me☕</h2>
+      <h2 className='head-tex'>Get in touch</h2>
 
       <div className='app__footer-cards'>
-        <a href="https://www.instagram.com/_shswt" target="_blank">
+        <a href="https://www.instagram.com/_shswt" target="_blank" rel="noopener noreferrer">
           <div className='app__footer-card'>
             <img src={images.instagram} alt='instagram' />
             <p className='p-text' >@_shswt</p>
           </div>
         </a>
-        <a href="https://www.linkedin.com/in/shswt" target="_blank">
+        <a href="https://www.linkedin.com/in/shswt" target="_blank" rel="noopener noreferrer">
           <div className='app__footer-card'>
             <img src={images.linkedin} alt='mobile' />
             <p className='p-text' >Shashwat Shukla</p>

@@ -23,16 +23,11 @@ const Work = () => {
         setWorks(data)
         setFilterWork(data)
         data.map(work => {
-          work.tags.map(tag => {
-            if (!tags.includes(tag)) {
-              tags.push(tag)
-            }
-            return 0;
-          })
+          tags.push(work.tags[0])
+          tags.push(work.tags[1])
           return 0;
         })
       })
-
     setAllTags(tags)
   }, [])
 

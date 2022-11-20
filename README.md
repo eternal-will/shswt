@@ -9,17 +9,29 @@ Prerequisites: `NodeJS`, `git`
 
 {Optional} : Fork the repository, then clone your fork and skip step 1.
 
-1. Clone the repo: ```git clone https://github.com/eternal-will/shswt_portfolio.git```
+1. Clone the repo:
+```
+git clone https://github.com/eternal-will/shswt_portfolio.git
+```
 
-2. Go to project directory: ```cd shswt_portfolio```
+2. Go to project directory:
+```
+cd shswt_portfolio
+```
 
 3. Create following file: `.env`
 
 4. Fill the `.env` file in the format of `.env.example` provided. 
 
-6. Install dependencies : ```npm install```
+6. Install dependencies:
+```
+npm install
+```
 
-7. Run the app in development mode: ```npm start```
+7. Run the app in development mode:
+```
+npm start
+```
 
 ### Backend Setup
 

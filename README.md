@@ -23,4 +23,4 @@ Prerequisites: `NodeJS`, `git`
 
 ### Backend Setup
 
-Follow the tutorial provided by @adrianhajdin at https://youtu.be/3HNyXCPDQ7Q?t=235
+Follow the tutorial provided by <a href="https://github.com/adrianhajdin">@adrianhajdin</a> at https://youtu.be/3HNyXCPDQ7Q?t=235

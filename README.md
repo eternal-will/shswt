@@ -36,6 +36,3 @@ npm start
 ### Backend Setup
 
 Follow the tutorial provided by <a href="https://github.com/adrianhajdin">@adrianhajdin</a> at https://youtu.be/3HNyXCPDQ7Q?t=235
-
-### P.S
-There are some parts of site which don't get rendered currently (since they had no content) and you'll have to change CSS for them accordingly to make them visible.
